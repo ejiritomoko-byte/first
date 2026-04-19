@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>わくわく算数ゲーム</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-shape shape-one"></div>
+  <div class="bg-shape shape-two"></div>
+
+  <main class="app-shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">しょうがくせい むけ</p>
+        <h1>わくわく算数ゲーム</h1>
+        <p class="hero-copy">
+          たし算と ひき算の もんだいに こたえて、
+          10もんクリアを めざそう。はやさよりも、ていねいに かんがえるのが だいじだよ。
+        </p>
+      </div>
+      <div class="hero-card">
+        <p class="hero-card-title">あそびかた</p>
+        <ol>
+          <li>「たし算」か「ひき算」を えらぶ</li>
+          <li>4つのこたえから 1つえらぶ</li>
+          <li>10もん おわると けっかが でる</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="game-layout">
+      <div class="panel question-panel">
+        <div class="status-bar">
+          <div>
+            <p class="label">もんだい</p>
+            <p id="progress-text" class="status-value">1 / 10</p>
+          </div>
+          <div>
+            <p class="label">とくてん</p>
+            <p id="score-text" class="status-value">0</p>
+          </div>
+          <div>
+            <p class="label">せいかい</p>
+            <p id="correct-text" class="status-value">0</p>
+          </div>
+        </div>
+
+        <div class="mode-switch" aria-label="もんだいのしゅるい">
+          <button id="add-mode" class="mode-button active" type="button">たし算</button>
+          <button id="sub-mode" class="mode-button" type="button">ひき算</button>
+        </div>
+
+        <div class="question-card">
+          <p class="label">もんだい</p>
+          <h2 id="question-text" class="question-text">7 + 5 = ?</h2>
+          <p id="message-text" class="message-text">したの こたえを えらんでね。</p>
+        </div>
+
+        <div id="answer-grid" class="answer-grid" aria-label="こたえのせんたくし"></div>
+
+        <div class="actions">
+          <button id="next-button" class="primary-button" type="button" disabled>つぎの もんだい</button>
+          <button id="restart-button" class="secondary-button" type="button">はじめから</button>
+        </div>
+      </div>
+
+      <div class="panel side-panel">
+        <div class="tips-card">
+          <p class="label">こつ</p>
+          <p id="tip-text">
+            たし算は「ふえる」、ひき算は「へる」を そうぞうしながら といてみよう。
+          </p>
+        </div>
+
+        <div class="history-card">
+          <p class="label">けっか</p>
+          <ul id="history-list" class="history-list"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section id="result-screen" class="result-screen hidden" aria-hidden="true">
+    <div class="result-card">
+      <p class="result-eyebrow">10もん クリア</p>
+      <h2 id="result-title">おつかれさま！</h2>
+      <p id="result-copy" class="result-copy"></p>
+      <button id="result-restart" class="primary-button result-button" type="button">もういちど あそぶ</button>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

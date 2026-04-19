@@ -1,0 +1,338 @@
+:root {
+  --cream: #fff9ef;
+  --lemon: #ffe082;
+  --orange: #ff9f68;
+  --coral: #ff6f61;
+  --blue: #89c2ff;
+  --mint: #98e2c6;
+  --ink: #22324a;
+  --panel: rgba(255, 255, 255, 0.88);
+  --shadow: 0 18px 40px rgba(34, 50, 74, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Hiragino Maru Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, #fff0a6 0, transparent 28%),
+    linear-gradient(180deg, #fffdf7 0%, #ffe8d6 100%);
+  overflow-x: hidden;
+}
+
+button {
+  font: inherit;
+  border: 0;
+  cursor: pointer;
+}
+
+.bg-shape {
+  position: fixed;
+  border-radius: 999px;
+  filter: blur(12px);
+  opacity: 0.45;
+  z-index: 0;
+}
+
+.shape-one {
+  width: 280px;
+  height: 280px;
+  background: #ffd166;
+  top: -70px;
+  right: -40px;
+}
+
+.shape-two {
+  width: 220px;
+  height: 220px;
+  background: #8ecae6;
+  bottom: -60px;
+  left: -40px;
+}
+
+.app-shell {
+  position: relative;
+  z-index: 1;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+
+.hero,
+.game-layout {
+  display: grid;
+  gap: 24px;
+}
+
+.hero {
+  grid-template-columns: 1.45fr 1fr;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.eyebrow,
+.label {
+  margin: 0;
+  color: #2a9d8f;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+h1,
+h2,
+.status-value {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.1;
+}
+
+.hero-copy {
+  max-width: 42rem;
+  line-height: 1.8;
+  font-size: 1.04rem;
+}
+
+.hero-card,
+.panel,
+.result-card {
+  background: var(--panel);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.65);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+}
+
+.hero-card {
+  padding: 22px 24px;
+  transform: rotate(1.6deg);
+}
+
+.hero-card-title {
+  margin-top: 0;
+  font-weight: 700;
+}
+
+.hero-card ol {
+  margin: 0;
+  padding-left: 20px;
+  line-height: 1.9;
+}
+
+.game-layout {
+  grid-template-columns: 1.08fr 0.92fr;
+}
+
+.panel {
+  padding: 24px;
+}
+
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.status-value {
+  margin-top: 6px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.mode-switch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.mode-button,
+.answer-button,
+.primary-button,
+.secondary-button {
+  border-radius: 18px;
+  padding: 14px 16px;
+  font-weight: 700;
+  transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease;
+}
+
+.mode-button:hover,
+.answer-button:hover,
+.primary-button:hover,
+.secondary-button:hover {
+  transform: translateY(-2px);
+}
+
+.mode-button {
+  background: white;
+  border: 2px solid #f4dcb2;
+}
+
+.mode-button.active {
+  background: var(--lemon);
+}
+
+.question-card,
+.tips-card,
+.history-card {
+  background: white;
+  border-radius: 24px;
+  padding: 20px;
+  border: 2px dashed #ffd4a5;
+}
+
+.question-text {
+  margin-top: 10px;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  text-align: center;
+}
+
+.message-text {
+  min-height: 2em;
+  margin: 12px 0 0;
+  text-align: center;
+  line-height: 1.7;
+}
+
+.answer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.answer-button {
+  min-height: 78px;
+  background: #fff8ec;
+  border: 2px solid #f7ddb2;
+  font-size: 1.5rem;
+}
+
+.answer-button.correct {
+  background: #dff7e8;
+  border-color: #7bd389;
+}
+
+.answer-button.wrong {
+  background: #ffe2e2;
+  border-color: #ef476f;
+}
+
+.answer-button:disabled {
+  cursor: default;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.actions button {
+  flex: 1;
+}
+
+.primary-button {
+  background: var(--orange);
+  color: white;
+  box-shadow: 0 10px 20px rgba(255, 159, 104, 0.3);
+}
+
+.secondary-button {
+  background: white;
+  border: 2px solid #f4dcb2;
+  color: var(--ink);
+}
+
+.tips-card,
+.history-card {
+  margin-bottom: 16px;
+}
+
+.history-list {
+  margin: 12px 0 0;
+  padding-left: 22px;
+  line-height: 1.9;
+  min-height: 220px;
+}
+
+.history-list.empty::before {
+  content: "まだ こたえていません";
+  display: block;
+  margin-left: -22px;
+  color: #728096;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.result-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(34, 50, 74, 0.42);
+  backdrop-filter: blur(8px);
+}
+
+.result-card {
+  width: min(520px, 100%);
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.result-eyebrow {
+  margin: 0;
+  color: var(--coral);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.result-copy {
+  line-height: 1.9;
+}
+
+.result-button {
+  margin-top: 16px;
+  min-width: 220px;
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .game-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-card {
+    transform: none;
+  }
+}
+
+@media (max-width: 620px) {
+  .app-shell {
+    padding: 20px 14px 36px;
+  }
+
+  .panel {
+    padding: 18px;
+  }
+
+  .answer-grid,
+  .mode-switch,
+  .actions {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+}
