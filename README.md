@@ -1,24 +1,21 @@
-# はじめてプログラミング
+# first アプリひろば
 
-小学生向けの、ブラウザで遊べるプログラミング入門アプリです。
+このリポジトリは、子ども向けの小さなブラウザアプリをまとめる場所です。
 
-## できること
+## あるアプリ
 
-- `まえへ`
-- `ひだりむく`
-- `みぎむく`
+- `programming-game` : 命令をならべて遊ぶプログラミングゲーム
+- `math-game` : たし算とひき算の4たく算数ゲーム
 
-この3つの命令をならべて、ロボットをゴールまで動かします。
+## 公開ページ
+
+- トップ : `https://ejiritomoko-byte.github.io/first/`
+- プログラミング : `https://ejiritomoko-byte.github.io/first/programming-game/`
+- 算数ゲーム : `https://ejiritomoko-byte.github.io/first/math-game/`
 
 ## 使い方
 
-1. `index.html` をブラウザで開く
-2. 命令ボタンを押してプログラムを作る
-3. `スタート` を押して結果を見る
-
-## 次に広げるアイデア
-
-- ステージを増やす
-- `くりかえし` 命令を追加する
-- 効果音やクリア演出を入れる
-- キャラクターや世界観を変える
+1. 新しいアプリ用のフォルダを作る
+2. その中に `index.html` `style.css` `app.js` などを入れる
+3. トップの `index.html` にカードを追加する
+4. `git add .` `git commit -m "..."` `git push` で反映する

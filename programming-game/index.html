@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>はじめてプログラミング</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background-shape shape-a"></div>
+  <div class="background-shape shape-b"></div>
+
+  <main class="app-shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">しょうがくせい むけ</p>
+        <h1>はじめてプログラミング</h1>
+        <p class="hero-copy">
+          めいれいをならべて、ロボットの「ピコ」をゴールまで みちびこう。
+          うごきを そうぞうして くみたてるのが、プログラミングの はじめの いっぽです。
+        </p>
+      </div>
+      <div class="hero-card">
+        <p class="hero-card-title">あそびかた</p>
+        <ol>
+          <li>したのボタンで めいれいを つくる</li>
+          <li>「スタート」で うごきを みる</li>
+          <li>ゴールできたら つぎの ステージへ</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="game-layout">
+      <div class="panel board-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="label">ステージ</p>
+            <h2 id="stage-title">ステージ 1</h2>
+          </div>
+          <button id="next-stage" class="secondary-button" type="button">つぎの ステージ</button>
+        </div>
+        <p id="stage-message" class="stage-message"></p>
+        <div id="board" class="board" aria-label="ゲームばん"></div>
+        <div class="legend">
+          <span><i class="legend-start"></i>スタート</span>
+          <span><i class="legend-goal"></i>ゴール</span>
+          <span><i class="legend-wall"></i>いわ</span>
+        </div>
+      </div>
+
+      <div class="panel controls-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="label">プログラム</p>
+            <h2>めいれいを つくろう</h2>
+          </div>
+          <button id="clear-program" class="secondary-button" type="button">ぜんぶ けす</button>
+        </div>
+
+        <div class="command-buttons" aria-label="めいれいボタン">
+          <button class="command-button move" data-command="forward" type="button">まえへ</button>
+          <button class="command-button turn-left" data-command="left" type="button">ひだりむく</button>
+          <button class="command-button turn-right" data-command="right" type="button">みぎむく</button>
+        </div>
+
+        <div class="program-box">
+          <p class="program-label">ならべた めいれい</p>
+          <ol id="program-list" class="program-list"></ol>
+        </div>
+
+        <div class="actions">
+          <button id="run-program" class="primary-button" type="button">スタート</button>
+          <button id="reset-stage" class="secondary-button" type="button">もどる</button>
+        </div>
+        <button id="undo-command" class="ghost-button" type="button">さいごを 1つ けす</button>
+
+        <div class="status-card">
+          <p class="program-label">ピコの むき</p>
+          <p id="robot-direction" class="status-value">みぎ</p>
+        </div>
+
+        <div class="tips-card">
+          <p class="program-label">こつ</p>
+          <p id="tip-text">まえへすすむ前に、どっちをむいているか かんがえてみよう。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section id="celebration-screen" class="celebration-screen hidden" aria-hidden="true">
+    <div class="celebration-card">
+      <div class="confetti-row" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <p class="celebration-eyebrow">ぜんぶ クリア</p>
+      <h2>おめでとう！</h2>
+      <p class="celebration-copy">
+        ピコを さいごまで ゴールへ みちびけたね。
+        きみは もう、プログラミングめいじん！
+      </p>
+      <button id="celebration-restart" class="primary-button celebration-button" type="button">もういちど あそぶ</button>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
